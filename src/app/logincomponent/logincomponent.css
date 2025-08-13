@@ -1,10 +1,28 @@
 
+body {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .loginForm {
-  width: 300px;
-  margin: 100px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: 340px;
+  padding: 32px 28px 24px 28px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s;
+}
+
+.loginForm:hover {
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.22);
 }
 
 input {
@@ -12,4 +30,51 @@ input {
   margin-bottom: 10px;
   align-self: center;
   padding: 8px;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f7f7f7;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
+
+input:focus {
+  border-color: #7f53ac;
+  box-shadow: 0 0 0 2px #e0c3fc55;
+  outline: none;
+}
+
+label {
+  font-weight: 500;
+  color: #7f53ac;
+  margin-bottom: 4px;
+  align-self: flex-start;
+}
+
+button[type="submit"] {
+  width: 60%;
+  padding: 10px 0;
+  background: linear-gradient(90deg, #7f53ac 0%, #647dee 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+  box-shadow: 0 2px 8px 0 rgba(100, 125, 222, 0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #647dee 0%, #7f53ac 100%);
+  box-shadow: 0 4px 16px 0 rgba(100, 125, 222, 0.18);
+}
+
+.loginForm h2 {
+  color: #7f53ac;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+

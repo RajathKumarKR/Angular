@@ -29,7 +29,7 @@ export class SalaryService {
         const taxableIncome = ctc - standardDeduction;
         const incomeTax = this.calculateIncomeTax(taxableIncome);
         const inHandSalary = ctc - epf - gratuity - professionalTax - incomeTax;
-
+        console.log('Total reduction ', totalDeductions);
         return {
             basic,
             epf,

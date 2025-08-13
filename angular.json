@@ -83,14 +83,26 @@
             "styles": [
               "src/styles.css"
             ],
-            
-"polyfills": [
-  "zone.js"
-]
-  
+            "polyfills": [
+              "zone.js"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }

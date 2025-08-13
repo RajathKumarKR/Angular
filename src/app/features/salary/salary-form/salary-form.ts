@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SalaryService } from '../../../core/salary.service';
 import { CommonModule } from '@angular/common';
-import { R } from '@angular/cdk/keycodes';
 import { SalaryBreakdown } from '../../../core/services/model/salary.model';
 import { Router } from '@angular/router';
 
