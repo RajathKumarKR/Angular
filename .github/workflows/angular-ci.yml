@@ -22,6 +22,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Audit dependencies
+        run: npm run audit
+        continue-on-error: true
+
+      - name: Audit fix (auto-fix vulnerabilities)
+        run: npm run audit:fix
+        continue-on-error: true
+
+      - name: Check for outdated dependencies
+        run: npm run check-updates
+        continue-on-error: true
+
       - name: Run lint
         run: npm run lint --if-present
         continue-on-error: true
