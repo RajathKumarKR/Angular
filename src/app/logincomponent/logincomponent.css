@@ -1,0 +1,15 @@
+
+.loginForm {
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input {
+  width: 50%;
+  margin-bottom: 10px;
+  align-self: center;
+  padding: 8px;
+}

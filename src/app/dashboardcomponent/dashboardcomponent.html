@@ -1,0 +1,4 @@
+<p>{{ 'dashboardcomponent works!' | capitalize }}</p>
+<app-user-stats [user]="userData"></app-user-stats>
+
+<app-user-stats [user]="userData" (userUpdated)="onUserUpdated($event)"></app-user-stats>

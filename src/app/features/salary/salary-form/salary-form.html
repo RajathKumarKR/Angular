@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="page-divider">
+        <h2>Salary Form</h2>
+
+        <form [formGroup]="form" (ngSubmit)="calculate()">
+            <label>Basic Salary: <input formControlName="basic" type="number" /></label><br />
+            <label>HRA: <input formControlName="hra" type="number" /></label><br />
+            <label>Allowances: <input formControlName="allowances" type="number" /></label><br />
+            <label>PF: <input formControlName="pf" type="number" /></label><br />
+            <label>Professional Tax: <input formControlName="professionalTax" type="number" /></label><br />
+            <button type="submit">Calculate</button>
+        </form>
+
+        <div *ngIf="netSalary !== null">
+            <h3>Net In-Hand Salary: ₹{{ netSalary }}</h3>
+
+            <h4>Net In-Hand Salary per Month: ₹{{ netSalary / 12 }}</h4>
+        </div>
+
+    </div>
+
+    <div class="page-divider">
+        <div class="calculator">
+            <h2>In-Hand Salary Calculator (New Tax Regime)</h2>
+           <label>CTC: </label> <input type="number" [(ngModel)]="ctc" placeholder="Enter your CTC" />
+            <button (click)="calculateSalary()">Calculate</button>
+
+            <div *ngIf="result">
+                <h3>Breakdown:</h3>
+                <ul>
+                    <li>Basic Salary: ₹{{ result.basic | number:'1.0-0' }}</li>
+                    <li>EPF: ₹{{ result.epf | number:'1.0-0' }}</li>
+                    <li>Gratuity: ₹{{ result.gratuity | number:'1.0-0' }}</li>
+                    <li>Professional Tax: ₹{{ result.professionalTax }}</li>
+                    <li>Standard Deduction: ₹{{ result.standardDeduction }}</li>
+                    <li>Income Tax: ₹{{ result.incomeTax | number:'1.0-0' }}</li>
+                    <li><strong>In-Hand Salary: ₹{{ result.inHandSalary | number:'1.0-0' }}</strong></li>
+                    <li><strong> Salary per Month: ₹{{ result.inHandSalary / 12 | number:'1.0-0' }}</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="page-divider">
+        <div class="gratuity-calculator">
+            <h2>Gratuity Calculator</h2>
+            <label>Salary: <input type="number" [(ngModel)]="salary" placeholder="Enter your salary" /></label><br />
+            <label>Years of Service: <input type="number" [(ngModel)]="years" placeholder="Enter years of service" /></label><br />
+            <button (click)="calculateGratuity()">Calculate Gratuity</button>
+
+            <div *ngIf="gratuity">
+                <h3>Gratuity Amount: ₹{{ gratuity | number:'1.0-0' }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div>
+    <button (click) = "addTask()">Add Task</button>
+</div>
+</div>
+

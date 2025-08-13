@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <span>Task Manager</span>
+  <span class="spacer"></span>
+  <button mat-raised-button color="accent" (click)="addTask()">Add Task</button>
+  <button mat-raised-button color="accent" (click)="home()">Home</button>
+  <button mat-raised-button color="accent" (click)="navigateToDashboard()">Dashboard</button>
+</mat-toolbar>
+
+<div class="task-container" *ngIf="tasks$ | async as tasks; else loading">
+  <mat-card *ngFor="let task of tasks" class="task-card">
+    <mat-card-title>{{ task.title }}</mat-card-title>
+    <mat-card-content>
+      <p>{{ task.description }}</p>
+      <p><strong>Due:</strong> {{ task.dueDate | date }}</p>
+      <mat-checkbox [checked]="task.completed" disabled>Completed</mat-checkbox>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary" (click)="viewTask(task.id)">View</button>
+      <button mat-button color="accent" (click)="editTask(task.id)">Edit</button>
+      <button mat-button color="warn" (click)="deleteTask(task.id)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>
